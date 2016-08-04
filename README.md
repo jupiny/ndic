@@ -1,11 +1,11 @@
 # ndic
-Python module for NAVER English-Korean and Korean-English dictionaries
+Python package for NAVER English-Korean and Korean-English dictionaries
 
 ## Introduction
 Search of both English-Korean and Korean-English dictionaries is provided.
 
 ## Requirements
-This module crawl the web <http://endic.naver.com/>, so all you need is an **Internet connection**.
+This package crawl the web <http://endic.naver.com/> using [requests](http://docs.python-requests.org/en/master/) and [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/), so all you need is an **Internet connection**.
 
 
 ## Installation
@@ -54,4 +54,12 @@ If your network connection is lost, you will get below message.
 ```
 >>> ndic('...')
 'Network connection is lost. Please check the connection to the Internet.'
+```
+
+## Command Line Interface
+Furthermore, you can use it in command line. This is implemented using [Click](http://click.pocoo.org/5/).
+
+```
+$ ndic love
+(특히 가족・친구에 대한) 사랑
 ```
