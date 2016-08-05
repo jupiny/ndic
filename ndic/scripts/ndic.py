@@ -7,7 +7,8 @@ import click
 @click.argument('search_word')
 def ndic(search_word):
     """
-    ndic script
+    Search the SEARCH_WORD in English-Korean and Korean-English dictionaries and return the corresponding Korean word(s) or English word(s). 
+
     """
     naver_dict_url = "http://endic.naver.com/search.nhn?sLn=kr&searchOption=all&query="
     try:
