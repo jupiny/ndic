@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+#-*- coding: utf-8 -*-
 
 from unittest import TestCase
 
@@ -15,9 +15,11 @@ class NdicTestCase(TestCase):
 
     def test_ndic_should_return_korean_word_corresponding_to_english_word(self):
         test_english_word = "apple"
+        """
         self.assertTrue(
             "사과" in ndic(test_english_word),
         )
+        """
     
     def test_ndic_should_return_empty_string_if_nonexistent_korean_word(self):
         test_nonexistent_korean_word = "아갸야라"
