@@ -8,18 +8,20 @@ from ndic import ndic
 class NdicTestCase(TestCase):
 
     def test_ndic_should_return_english_word_corresponding_to_korean_word(self):
-        test_korean_word = "사과"
+        test_search_korean_word = "사과"
+        test_corresponding_english_word = "apple"
+        is_searched = test_corresponding_english_word in ndic(test_search_korean_word)
         self.assertTrue(
-            "apple" in ndic(test_korean_word),
+            is_searched,
         )
 
     def test_ndic_should_return_korean_word_corresponding_to_english_word(self):
-        test_english_word = "apple"
-        """
+        test_search_english_word = "apple"
+        test_corresponding_korean_word= "사과"
+        is_searched = test_corresponding_korean_word in ndic(test_search_english_word)
         self.assertTrue(
-            "사과" in ndic(test_english_word),
+            is_searched,
         )
-        """
     
     def test_ndic_should_return_empty_string_if_nonexistent_korean_word(self):
         test_nonexistent_korean_word = "아갸야라"
