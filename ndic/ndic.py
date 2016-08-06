@@ -21,7 +21,7 @@ def ndic(search_word):
         response = requests.get(naver_dict_url+search_word)
     except requests.ConnectionError:
         return "Network connection is lost. Please check the connection to the Internet."
-    dom = BeautifulSoup(response.content, "html.parser")
+    dom = BeautifulSoup(response.content, "lxml")
     search_word_element = dom.select_one(".fnt_e30") or None
     word_meaning_element = dom.select_one(".fnt_k05") or None
     word_meaning = ""
