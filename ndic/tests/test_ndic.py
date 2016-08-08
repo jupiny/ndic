@@ -12,7 +12,7 @@ class NdicTestCase(TestCase):
         test_corresponding_english_word = "(과일) apple"
         self.assertEqual(
             ndic(test_search_korean_word),
-            test_corresponding_english_word,
+            test_corresponding_english_word.encode('utf-8').decode('utf-8'),
         )
 
     def test_ndic_should_return_korean_word_corresponding_to_english_word(self):
@@ -20,7 +20,7 @@ class NdicTestCase(TestCase):
         test_corresponding_korean_word = "사과"
         self.assertEqual(
             ndic(test_search_english_word),
-            test_corresponding_korean_word,
+            test_corresponding_korean_word.encode('utf-8').decode('utf-8'),
         )
     
     def test_ndic_should_return_empty_string_if_nonexistent_korean_word(self):
