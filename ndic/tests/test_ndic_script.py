@@ -1,6 +1,4 @@
 #-*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from unittest import TestCase
 
 from click.testing import CliRunner
@@ -24,7 +22,7 @@ class NdicScriptTestCase(TestCase):
         )
         self.assertEqual(
             result.output.replace('\n', ''),
-            "(과일) apple",
+            u"(과일) apple",
         )
 
     def test_ndic_script_should_return_korean_word_corresponding_to_english_word(self):
@@ -38,7 +36,7 @@ class NdicScriptTestCase(TestCase):
         )
         self.assertEqual(
             result.output.replace('\n', ''),
-            "사과",
+            u"사과",
         )
     
     def test_ndic_script_should_return_empty_string_if_nonexistent_korean_word(self):
