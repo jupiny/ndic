@@ -1,11 +1,15 @@
 # Ndic
+[![pypi](https://img.shields.io/badge/pypi-v1.0-orange.svg)]()
+[![travis](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
+[![coverage](https://img.shields.io/badge/coverage-42%25-yellow.svg)]()
+
 Python package for NAVER English-Korean and Korean-English dictionaries
 
 ## Introduction
 Search of both English-Korean and Korean-English dictionaries is provided.
 
 ## Requirements
-Ndic works by crawling the web <http://endic.naver.com/>. To crawl, it uses [Requests](http://docs.python-requests.org/en/master/) and [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+Ndic works by crawling the web <http://endic.naver.com/>. To crawl, it uses [Requests](http://docs.python-requests.org/en/master/) and [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
 
 Therefore, you should use it in **Internet Environments**
 
