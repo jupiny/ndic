@@ -1,12 +1,15 @@
-# ndic
+# Ndic
 Python package for NAVER English-Korean and Korean-English dictionaries
 
 ## Introduction
 Search of both English-Korean and Korean-English dictionaries is provided.
 
 ## Requirements
-This package crawl the web <http://endic.naver.com/> using [requests](http://docs.python-requests.org/en/master/) and [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/), so all you need is an **Internet connection**.
+Ndic works by crawling the web <http://endic.naver.com/>. To crawl, it uses [Requests](http://docs.python-requests.org/en/master/) and [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 
+Therefore, you should use it in **Internet Environments**
+
+Ndic officially supports Python 2.6–2.7 & 3.3–3.5 because [Requests officially supports these versions.](https://github.com/kennethreitz/requests#feature-support)
 
 ## Installation
 Install via pip:
@@ -57,7 +60,7 @@ If your network connection is lost, you will get below message.
 ```
 
 ## Command Line Interface
-Furthermore, you can use it in command line. This is implemented using [Click](http://click.pocoo.org/5/).
+Furthermore, Ndic supports CLI(Command Line System). So you can use it in command line and get the return value of Ndic in terminals. It works by [Click](http://click.pocoo.org/5/).
 
 ```
 $ ndic love
