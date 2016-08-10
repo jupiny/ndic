@@ -11,9 +11,9 @@ Search of both English-Korean and Korean-English dictionaries is provided.
 ## Requirements
 Ndic works by crawling the web <http://endic.naver.com/>. To crawl, it uses [Requests](http://docs.python-requests.org/en/master/) and [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
 
-Therefore, you should use it in **Internet Environments**
+Therefore, you should use it in **Internet Environments**.
 
-Ndic officially supports Python 2.6–2.7 & 3.3–3.5 because [Requests officially supports these versions.](https://github.com/kennethreitz/requests#feature-support)
+Ndic supports Python 2.6–2.7 & 3.3–3.5 because [Requests officially supports these versions.](https://github.com/kennethreitz/requests#feature-support)
 
 ## Installation
 Install via pip:
