@@ -1,1 +1,1 @@
-from .ndic import ndic
+from .ndic import search

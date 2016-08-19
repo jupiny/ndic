@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def ndic(search_word):
+def search(search_word):
     """
     Search the word in English-Korean and Korean-English dictionaries and return the corresponding Korean word(s) or English word(s). 
 

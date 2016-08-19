@@ -6,7 +6,7 @@ import click
 
 @click.command()
 @click.argument('search_word')
-def ndic(search_word):
+def search(search_word):
     """
     Search the SEARCH_WORD in English-Korean and Korean-English dictionaries and return the corresponding Korean word(s) or English word(s). 
 

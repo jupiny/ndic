@@ -1,0 +1,1 @@
+from .ndic import search 

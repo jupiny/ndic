@@ -25,6 +25,6 @@ setup(
   tests_require=['nose'],
   entry_points='''
     [console_scripts]
-    ndic=ndic.scripts.ndic:ndic
+    ndic=ndic.scripts.ndic:search
   ''',
 )
