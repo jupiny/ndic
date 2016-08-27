@@ -5,6 +5,7 @@ def get_requirements(filename):
     return open(filename).read().splitlines()
 
 install_requires = get_requirements('requirements.txt')
+test_requires = get_requirements('test-requirements.txt')
 
 setup(
   name='ndic',
@@ -22,7 +23,7 @@ setup(
   # keywords = ['dictionary', 'translate', 'English', 'Korean', 'Naver'],
   classifiers=[],
   test_suite='nose.collector',
-  tests_require=['nose'],
+  tests_require=test_requires,
   entry_points='''
     [console_scripts]
     ndic=ndic.scripts.ndic:search
