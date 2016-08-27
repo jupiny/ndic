@@ -10,6 +10,5 @@ install:
   - "pip install -r requirements.txt"
 # command to run tests
 script:
-  - nosetests
-  - coverage run setup.py test
+  - nosetests  --with-coverage --cover-package=ndic
 after_success: coveralls
