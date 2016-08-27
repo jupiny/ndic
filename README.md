@@ -1,7 +1,6 @@
 # Ndic
-[![pypi](https://img.shields.io/badge/pypi-v1.0-orange.svg)]()
-[![travis](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
-[![coverage](https://img.shields.io/badge/coverage-42%25-yellow.svg)]()
+[![Build Status](https://travis-ci.org/jupiny/ndic.svg?branch=master)](https://travis-ci.org/jupiny/ndic)
+[![Coverage Status](https://coveralls.io/repos/github/jupiny/ndic/badge.svg?branch=master)](https://coveralls.io/github/jupiny/ndic?branch=master)
 
 Python package for NAVER English-Korean and Korean-English dictionaries
 
@@ -26,40 +25,40 @@ $ pip install ndic
 The usage is very simple.
 
 ```
->>> from ndic import ndic
+>>> import ndic
 ```
 Entering an English word as the function argument will return the corresponding Korean word(s).
 
 ```
->>> ndic('apple')
+>>> ndic.search('apple')
 '사과'
 ```
 Conversely, entering a Korean word as the function argument will return the corresponding English word(s).
 
 ```
->>> ndic('안녕하세요')
+>>> ndic.search('안녕하세요')
 'Hi!'
 ```
 Phrases or words may also be searched.
 
 ```
->>> ndic('in order to')
+>>> ndic.search('in order to')
 '(목적) 위하여'
 ```
 
 Entering a nonexistent word as the function argument will return the empty string.
 
 ```
->>> ndic("aslkjfwe")
+>>> ndic.search("aslkjfwe")
 ''
->>> ndic("아댜리야")
+>>> ndic.search("아댜리야")
 ''
 ```
 
 If your network connection is lost, you will get below message.
 
 ```
->>> ndic('...')
+>>> ndic.search('...')
 'Network connection is lost. Please check the connection to the Internet.'
 ```
 
