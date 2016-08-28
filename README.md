@@ -1,5 +1,6 @@
 # Ndic
 [![Build Status](https://travis-ci.org/jupiny/ndic.svg?branch=master)](https://travis-ci.org/jupiny/ndic)
+[![Coverage Status](https://coveralls.io/repos/github/jupiny/ndic/badge.svg?branch=master)](https://coveralls.io/github/jupiny/ndic?branch=master)
 
 Python package for NAVER English-Korean and Korean-English dictionaries
 
