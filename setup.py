@@ -1,11 +1,13 @@
 from setuptools import setup, find_packages
+import os
 
 
 def get_requirements(filename):
-    return open(filename).read().splitlines()
+    PROJECT_ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+    return open(os.path.join(PROJECT_ROOT_DIR, filename)).read().splitlines()
 
-install_requires = get_requirements('requirements.txt')
-test_requires = get_requirements('test-requirements.txt')
+install_requires = get_requirements('/Users/jupiny/ndic/requirements.txt')
+test_requires = get_requirements('/Users/jupiny/ndic/test-requirements.txt')
 
 setup(
   name='ndic',
