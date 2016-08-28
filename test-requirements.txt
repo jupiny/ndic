@@ -1,4 +1,4 @@
 nose
 coveralls
-tox
 detox
+tox-travis

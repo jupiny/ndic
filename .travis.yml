@@ -7,9 +7,8 @@ python:
   - "3.5"
 # command to install dependencies
 install:
-  - "pip install -r requirements.txt"
-  - "pip install -r test-requirements.txt"
+  - "pip install tox-travis"
 # command to run tests
 script:
-  - nosetests  --with-coverage --cover-package=ndic
+  - tox 
 after_success: coveralls
