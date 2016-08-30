@@ -2,12 +2,13 @@ from setuptools import setup, find_packages
 import os
 
 
-def get_requirements(filename):
-    PROJECT_ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-    return open(os.path.join(PROJECT_ROOT_DIR, filename)).read().splitlines()
+ROOT = os.path.abspath(os.path.dirname(__file__))
 
-install_requires = get_requirements('/Users/jupiny/ndic/requirements.txt')
-test_requires = get_requirements('/Users/jupiny/ndic/test-requirements.txt')
+def get_requirements(filename):
+    return open(os.path.join(ROOT, filename)).read().splitlines()
+
+install_requires = get_requirements('requirements.txt')
+test_requires = get_requirements('test-requirements.txt')
 
 setup(
   name='ndic',
@@ -22,6 +23,7 @@ setup(
   author_email='tmdghks584@gmail.com',
   url='https://github.com/jupiny/ndic',
   download_url='https://github.com/jupiny/ndic/tarball/1.0',
+  dependency_links = ['https://github.com/jupiny/ndic/tarball/1.0'],
   # keywords = ['dictionary', 'translate', 'English', 'Korean', 'Naver'],
   classifiers=[],
   test_suite='nose.collector',
