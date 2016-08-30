@@ -8,7 +8,7 @@ def get_requirements(filename):
     return open(os.path.join(ROOT, filename)).read().splitlines()
 
 install_requires = get_requirements('requirements.txt')
-test_requires = get_requirements('test-requirements.txt')
+tests_require = get_requirements('test-requirements.txt')
 
 setup(
   name='ndic',
@@ -19,6 +19,7 @@ setup(
   install_requires=install_requires,
   version='1.0',
   description='Python module for NAVER English-Korean and Korean-English dictionaries',
+  long_description=open(os.path.join(ROOT, 'README.md')).read(),
   author='jupiny',
   author_email='tmdghks584@gmail.com',
   url='https://github.com/jupiny/ndic',
@@ -27,7 +28,7 @@ setup(
   # keywords = ['dictionary', 'translate', 'English', 'Korean', 'Naver'],
   classifiers=[],
   test_suite='nose.collector',
-  tests_require=test_requires,
+  tests_require=tests_require,
   entry_points='''
     [console_scripts]
     ndic=ndic.scripts.ndic:search
