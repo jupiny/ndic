@@ -55,11 +55,11 @@ Entering a nonexistent word as the function argument will return the empty strin
 ''
 ```
 
-If your network connection is lost, you will get below message.
+If your network connection is lost, you will get below error message.
 
 ```
 >>> ndic.search('...')
-'Network connection is lost. Please check the connection to the Internet.'
+NdicConnectionError: Network connection is lost. Please check the connection to the Internet.
 ```
 
 ## Command Line Interface

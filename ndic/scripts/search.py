@@ -5,7 +5,8 @@ import requests
 from bs4 import BeautifulSoup
 import click
 
-from ndic.constants import NAVER_ENDIC_URL, CONNECTION_ERROR_MESSAGE
+from ndic.constants import NAVER_ENDIC_URL
+from ndic.exceptions import NdicConnectionError
 
 
 @click.command()
@@ -22,8 +23,7 @@ def search(search_word):
     try:
         response = requests.get(naver_endic_url)
     except requests.ConnectionError:
-        click.echo(CONNECTION_ERROR_MESSAGE)
-        return
+        raise NdicConnectionError
     dom = BeautifulSoup(response.content, "lxml")
     search_word_element = dom.select_one(".fnt_e30") or None
     word_meaning_element = dom.select_one(".fnt_k05") or None
