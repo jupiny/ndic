@@ -3,7 +3,7 @@ from unittest import TestCase
 
 from click.testing import CliRunner
 
-from ndic.scripts import ndic
+from ndic.scripts.search import search
 
 
 class NdicScriptTestCase(TestCase):
@@ -13,7 +13,7 @@ class NdicScriptTestCase(TestCase):
 
     def test_search_korean_word(self):
         result = self.runner.invoke(
-            ndic.search,
+            search,
             ["사과"],
         )
         self.assertEqual(
@@ -27,7 +27,7 @@ class NdicScriptTestCase(TestCase):
 
     def test_search_english_word(self):
         result = self.runner.invoke(
-            ndic.search,
+            search,
             ["apple"],
         )
         self.assertEqual(
@@ -41,7 +41,7 @@ class NdicScriptTestCase(TestCase):
 
     def test_search_nonexistent_korean_word(self):
         result = self.runner.invoke(
-            ndic.search,
+            search,
             ["아갸야라"],
         )
         self.assertEqual(
@@ -54,7 +54,7 @@ class NdicScriptTestCase(TestCase):
 
     def test_search_nonexistent_english_word(self):
         result = self.runner.invoke(
-            ndic.search,
+            search,
             ["asfasdfasdf"],
         )
         self.assertEqual(

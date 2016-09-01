@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 
-from ndic.ndic import search
+from ndic.search import search
 
 
 __all__ = [

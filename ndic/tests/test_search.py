@@ -3,7 +3,7 @@ from __future__ import unicode_literals, absolute_import
 
 from unittest import TestCase
 
-from ndic.ndic import search
+from ndic.search import search
 
 
 class NdicTestCase(TestCase):

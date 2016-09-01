@@ -31,6 +31,6 @@ setup(
   tests_require=tests_require,
   entry_points='''
     [console_scripts]
-    ndic=ndic.scripts.ndic:search
+    ndic=ndic.scripts.search:search
   ''',
 )
