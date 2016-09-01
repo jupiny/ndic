@@ -1,21 +1,28 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+from __future__ import absolute_import
+
 import requests
 from bs4 import BeautifulSoup
 import click
+
+from ndic.constants import NAVER_ENDIC_URL, CONNECTION_ERROR_MESSAGE
 
 
 @click.command()
 @click.argument('search_word')
 def search(search_word):
     """
-    Search the SEARCH_WORD in English-Korean and Korean-English dictionaries and return the corresponding Korean word(s) or English word(s). 
+    Search the SEARCH_WORD in English-Korean and Korean-English dictionaries
+    and return the corresponding Korean word(s) or English word(s).
 
     """
-    naver_dict_url = "http://endic.naver.com/search.nhn?sLn=kr&searchOption=all&query="
+    naver_endic_url = NAVER_ENDIC_URL.format(
+        search_word=search_word,
+    )
     try:
-        response = requests.get(naver_dict_url+search_word)
+        response = requests.get(naver_endic_url)
     except requests.ConnectionError:
-        click.echo("Network connection is lost. Please check the connection to the Internet.")
+        click.echo(CONNECTION_ERROR_MESSAGE)
         return
     dom = BeautifulSoup(response.content, "lxml")
     search_word_element = dom.select_one(".fnt_e30") or None
