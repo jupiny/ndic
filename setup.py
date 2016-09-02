@@ -3,7 +3,7 @@ import os
 
 
 ROOT = os.path.abspath(os.path.dirname(__file__))
-VERSION = '1.1'
+VERSION = '1.2'
 
 def get_requirements(filename):
     return open(os.path.join(ROOT, filename)).read().splitlines()
