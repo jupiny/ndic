@@ -16,7 +16,7 @@ setup(
     tests_require=get_requirements('test-requirements.txt'),
     version=VERSION,
     description='Python module for NAVER English-Korean and Korean-English dictionaries',
-    long_description=open(os.path.join(ROOT, 'README.md')).read(),
+    long_description=open(os.path.join(ROOT, 'README.rst')).read(),
     author='jupiny',
     author_email='tmdghks584@gmail.com',
     url='https://github.com/jupiny/ndic',
