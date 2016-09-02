@@ -22,6 +22,8 @@ setup(
     url='https://github.com/jupiny/ndic',
     download_url='https://pypi.python.org/pypi/ndic',
     # keywords = ['dictionary', 'translate', 'English', 'Korean', 'Naver'],
+    license='MIT',
+    platforms = "Posix; MacOS X; Windows",
     test_suite='nose.collector',
     entry_points='''
         [console_scripts]
