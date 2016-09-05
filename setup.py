@@ -27,7 +27,7 @@ setup(
     test_suite='nose.collector',
     entry_points='''
         [console_scripts]
-        ndic=ndic.scripts.search:search
+        ndic=ndic.scripts.search:cli_search
     ''',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
