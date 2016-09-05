@@ -18,7 +18,7 @@ def search(search_word):
     Returns:
         English word(s) or Korean word(s) corresponding to the search_word
     Raises:
-        ConnectionError: if network connection is lost.
+        NdicConnectionError: if network connection is lost.
 
     """
     naver_endic_url = NAVER_ENDIC_URL.format(
