@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+
+"""
+This module provides constants that are used within Ndic
+
+"""
 from __future__ import unicode_literals
 
 

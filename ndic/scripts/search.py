@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+
+"""
+This module provides functions for searching the word
+in command line interface by Ndic
+
+"""
 from __future__ import absolute_import
 
 import click
@@ -11,7 +17,7 @@ from ndic.search import search
 def cli_search(search_word):
     """
     Search the SEARCH_WORD in English-Korean and Korean-English dictionaries
-    and return the corresponding Korean word(s) or English word(s).
+    and echo the corresponding Korean word(s) or English word(s).
 
     """
     word_meaning = search(search_word)

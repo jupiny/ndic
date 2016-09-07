@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+"""
+This module provides functions for searching the word by Ndic
+
+"""
 from __future__ import absolute_import
 
 from ndic.utils import make_naver_endic_url
