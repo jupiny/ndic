@@ -36,11 +36,13 @@ Usage
 
 The usage is very simple.
 
+Begin by importing the Ndic module:
+
 ::
 
     >>> import ndic
 
-Entering an English word as the function argument will return the
+Entering an English word as the ``search`` function argument will return the
 corresponding Korean word(s).
 
 ::
@@ -48,7 +50,7 @@ corresponding Korean word(s).
     >>> ndic.search('apple')
     '사과'
 
-Conversely, entering a Korean word as the function argument will return
+Conversely, entering a Korean word as the ``search`` function argument will return
 the corresponding English word(s).
 
 ::
@@ -56,14 +58,14 @@ the corresponding English word(s).
     >>> ndic.search('안녕하세요')
     'Hi!'
 
-Phrases or words may also be searched.
+Phrases may also be searched.
 
 ::
 
     >>> ndic.search('in order to')
     '(목적) 위하여'
 
-Entering a nonexistent word as the function argument will return the
+Entering a nonexistent word as the ``search`` function argument will return the
 empty string.
 
 ::
@@ -83,8 +85,10 @@ If your network connection is lost, you will get below error message.
 Command Line Interface
 ----------------------
 
-Furthermore, Ndic supports CLI(Command Line System). So you can use it
-in command line and get the return value of Ndic in terminals. It works
+Furthermore, Ndic supports CLI(Command Line System).
+
+So you can use it
+in command line and get the return value of the ``search`` fuction in terminals. It works
 by `Click`_.
 
 ::
