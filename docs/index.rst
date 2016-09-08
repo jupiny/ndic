@@ -34,7 +34,7 @@ The usage is very simple.
 But, make sure that:
 
 * Ndic is installed
-* Internet network is connected.
+* The user is connected to the Internet. 
 
 Let's get started with some simple examples.
 
