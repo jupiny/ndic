@@ -6,9 +6,6 @@
 Ndic Documentation
 ******************
 
-.. toctree::
-   :maxdepth: 2
-
 Ndic is Python package for NAVER English-Korean and Korean-English dictionaries.
 
 Search of both English-Korean and Korean-English dictionaries is provided.
