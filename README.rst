@@ -1,7 +1,7 @@
 Ndic
 ====
 
-|Build Status| |Coverage Status|
+|Build Status| |Coverage Status| |Pypi Version| |Downloads Per Month| |License MIT|
 
 Python package for NAVER English-Korean and Korean-English dictionaries
 
@@ -105,3 +105,9 @@ by `Click`_.
    :target: https://travis-ci.org/jupiny/ndic
 .. |Coverage Status| image:: https://coveralls.io/repos/github/jupiny/ndic/badge.svg?branch=master
    :target: https://coveralls.io/github/jupiny/ndic?branch=master
+.. |Pypi Version| image:: https://img.shields.io/pypi/v/ndic.svg
+   :target: https://pypi.python.org/pypi/ndic
+.. |Downloads Per Month| image:: https://img.shields.io/pypi/dm/ndic.svg
+   :target: https://pypi.python.org/pypi/ndic
+.. |License MIT| image:: https://img.shields.io/badge/license-MIT-blue.svg
+   :target: https://raw.githubusercontent.com/jupiny/ndic/master/LICENSE
