@@ -82,3 +82,7 @@ class NdicScriptTestCase(TestCase):
             result.exception.__class__,
             NdicConnectionError,
         )
+        self.assertEqual(
+            str(result.exception),
+            str(NdicConnectionError()),
+        )
