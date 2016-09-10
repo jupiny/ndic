@@ -3,7 +3,11 @@ from __future__ import unicode_literals, absolute_import
 
 from unittest import TestCase
 
+import mock
+import requests
+
 from ndic.search import search
+from ndic.exceptions import NdicConnectionError
 
 
 class NdicTestCase(TestCase):
@@ -34,4 +38,13 @@ class NdicTestCase(TestCase):
         test_nonexistent_english_word = "asfasdfasdf"
         self.assertFalse(
             search(test_nonexistent_english_word),
+        )
+
+    @mock.patch.object(requests, 'get', side_effect=requests.ConnectionError)
+    def test_search_without_internet_network(self, mock_requests):
+        test_search_korean_word = "사과"
+        self.assertRaises(
+            NdicConnectionError,
+            search,
+            test_search_korean_word,
         )
