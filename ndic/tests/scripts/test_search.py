@@ -2,8 +2,11 @@
 from unittest import TestCase
 
 from click.testing import CliRunner
+import mock
+import requests
 
 from ndic.scripts.search import cli_search
+from ndic.exceptions import NdicConnectionError
 
 
 class NdicScriptTestCase(TestCase):
@@ -63,4 +66,19 @@ class NdicScriptTestCase(TestCase):
         )
         self.assertFalse(
             result.output.replace('\n', ''),
+        )
+
+    @mock.patch.object(requests, 'get', side_effect=requests.ConnectionError)
+    def test_search_without_internet_network(self, mock_requests):
+        result = self.runner.invoke(
+            cli_search,
+            ["사과"],
+        )
+        self.assertEqual(
+            result.exit_code,
+            -1,
+        )
+        self.assertEqual(
+            result.exception.__class__,
+            NdicConnectionError,
         )
