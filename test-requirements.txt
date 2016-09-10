@@ -2,3 +2,4 @@ nose
 coveralls
 tox
 flake8
+mock
