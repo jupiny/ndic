@@ -1,5 +1,7 @@
+virtualenv
 nose
 coveralls
 tox
+tox-pyenv
 flake8
 mock

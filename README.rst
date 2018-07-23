@@ -19,7 +19,7 @@ uses `Requests`_ and `BeautifulSoup`_.
 
 Therefore, you should use it in **Internet Environments**.
 
-Ndic supports Python 2.6–2.7 & 3.3–3.5 because `Requests officially
+Ndic supports Python 2.7 & 3.4–3.7 because `Requests officially
 supports these versions.`_
 
 Installation
