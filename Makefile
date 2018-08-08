@@ -1,4 +1,5 @@
 upload:
-	- python setup.py register -r pypi
-	- python setup.py sdist upload -r pypi
-
+	- python setup.py sdist
+	- twine upload dist/*
+testupload:
+	- twine upload --repository testpypi dist/*
