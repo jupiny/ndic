@@ -106,6 +106,8 @@ by `Click`_.
 
     $ ndic love
     (특히 가족・친구에 대한) 사랑
+    $ ndic get --xth 2 # or -x 2
+    얻다, 입수하다; 가지다(obtain)
 
 .. _Requests: http://docs.python-requests.org/en/master/
 .. _BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
