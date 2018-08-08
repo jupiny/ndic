@@ -39,17 +39,19 @@ def request_naver_endic_url(naver_endic_url):
     return response
 
 
-def get_word_meaning(response):
+def get_word_meaning(response, xth):
     """
-    Parse a HTML document and get word meaning text
+    Parse a HTML document and get a text of xth meaning
     from particular tags
-
+    By default, xth = 1
     """
 
     dom = BeautifulSoup(response.content, "lxml")
-    search_word_element = dom.select_one(".fnt_e30") or None
+    div_element = dom.select_one(".word_num") or None
     word_meaning = ""
-    if search_word_element and search_word_element.select_one('strong'):
-        word_meaning_element = dom.select_one(".fnt_k05")
-        word_meaning = word_meaning_element.text
+    if div_element:
+        word_meaning_elements = div_element.select(".fnt_k05")
+        meaning_cnt = len(word_meaning_elements)
+        if 1 <= xth and xth <= meaning_cnt:
+            word_meaning = word_meaning_elements[xth-1].text
     return word_meaning

@@ -11,7 +11,7 @@ from ndic.utils import request_naver_endic_url
 from ndic.utils import get_word_meaning
 
 
-def search(search_word):
+def search(search_word, xth=1):
     """
     Search the word in English-Korean and Korean-English dictionaries
     and return the corresponding Korean word(s) or English word(s).
@@ -26,5 +26,5 @@ def search(search_word):
     """
     naver_endic_url = make_naver_endic_url(search_word)
     response = request_naver_endic_url(naver_endic_url)
-    word_meaning = get_word_meaning(response)
+    word_meaning = get_word_meaning(response, xth)
     return word_meaning
