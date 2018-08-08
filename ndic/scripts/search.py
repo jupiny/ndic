@@ -23,7 +23,3 @@ def cli_search(search_word, xth):
     """
     word_meaning = search(search_word, xth)
     click.echo(word_meaning)
-
-
-if __name__ == '__main__':
-    cli_search()
