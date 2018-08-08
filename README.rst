@@ -64,9 +64,9 @@ Unless you set any ``xth`` value, you will get the first meaning of the word.
 
 .. code-block:: python
 
-    >>> ndic.search('말', 1) // 1st meaning
+    >>> ndic.search('말', 1) # 1st meaning
     '(언어) word, language, speech, (literary) tongue'
-    >>> ndic.search('말', 2) // 2nd meaning
+    >>> ndic.search('말', 2) # 2nd meaning
     '(동물) horse'
 
 Phrases may also be searched.
