@@ -1,3 +1,5 @@
+from .exceptions import CannotFindResultError
+
 from bs4 import BeautifulSoup
 
 def parse_zh_json(zh_json):
@@ -41,6 +43,12 @@ def parse_zh_json(zh_json):
             "parse_zh_json() got wrong parameter zh_json"
             "expected dict type but got {} type".format(type(zh_json))
         )
+
+    if "searchResults" not in zh_json:
+        raise CannotFindResultError()
+
+    if "searchEntryList" not in zh_json["searchResults"]:
+        raise CannotFindResultError()
 
     items = zh_json["searchResults"]["searchEntryList"]["items"]
 
