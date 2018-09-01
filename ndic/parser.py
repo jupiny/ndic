@@ -1,3 +1,4 @@
+from bs4 import BeautifulSoup
 
 def parse_zh_json(zh_json):
     """
@@ -20,7 +21,7 @@ def parse_zh_json(zh_json):
             "entryNameTTS" : item["entryNameTTS"],
             "meanList": [
                 {
-                    "meaning": mean["mean"],
+                    "meaning": remove_html_tags(mean["mean"]),
                     "poomsa": mean["partsLabel"]
                 }
                 for mean in item["meanList"]
@@ -30,3 +31,21 @@ def parse_zh_json(zh_json):
         ret.append(card)
 
     return ret
+
+
+def remove_html_tags(text):
+    """
+    remove html tags from soup and return TEXT
+
+    e.g.)
+        input:
+            I'm <autoLink search="easy">easy</autoLink>
+        output:
+            I'm easy
+
+    :param text: text which contains tags
+    :return: string
+    """
+
+    soup = BeautifulSoup(text)
+    return soup.text
