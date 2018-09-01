@@ -142,23 +142,29 @@ def stringify_zh_result(zh_json):
     for item in zh_json:
         single_line = "-------------------------\n"
 
-        single_line += "{entryNameTTS}\n".format(
-            entryNameTTS=item["entryNameTTS"]
+        single_line += "{entryNameTTS}({pinyin})\n".format(
+            entryNameTTS=item["entryNameTTS"],
+            pinyin=item["pinyin"],
         )
 
         for mean in item["meanList"]:
             poomsa = mean["poomsa"]
             meaning = mean["meaning"]
-            meanExtends = mean["meanExtends"]
+            relatedMeanInfos = mean["relatedMeanInfos"]
 
             if poomsa != "":
-                single_line += "[{poomsa}]".format(poomsa=poomsa)
+                single_line += "[{poomsa}] ".format(poomsa=poomsa)
 
             if meaning != "":
                 single_line += "{meaning} ".format(meaning=meaning)
 
-            if meanExtends != "":
-                single_line += "〓 [{meanExtends}]".format(meanExtends=meanExtends)
+            if relatedMeanInfos: # if empty
+                for related in relatedMeanInfos:
+                    single_line += "\n[{relatedTypeString}] {destEntryName}({destEntryPinyin}) ".format(
+                        relatedTypeString=related["relatedTypeString"],
+                        destEntryName=related["destEntryName"],
+                        destEntryPinyin=related["destEntryPinyin"],
+                    )
 
             single_line += "\n"
 
