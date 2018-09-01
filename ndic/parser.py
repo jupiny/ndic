@@ -2,9 +2,38 @@ from bs4 import BeautifulSoup
 
 def parse_zh_json(zh_json):
     """
-
+    tidy up zh_json data and return tiny data
     :param zh_json:
     :return:
+    list
+    e.g.)
+    [
+        {
+            'entryNameTTS': '你们',
+            'meanList': [
+                {
+                    'meaning': '너희들. 당신들. 자네들.',
+                    'relatedMeanInfos': [
+                        {
+                            'destEntryName': '你笃',
+                            'relatedTypeString': '참조어',
+                            'destEntryPinyin': 'nǐdǔ',
+                            'relatedMatEntryName': '恁',
+                            'relatedTypeString': '참조어',
+                            'destEntryPinyin': 'nín',
+                            'relatedMark': '→'
+                        }
+                    ],
+                    'poomsa': '대명사'
+                }
+            ],
+            'pinyin': 'nǐ‧men'
+        },
+        {
+            'entryNameTTS': '你们好',
+            ...
+        }
+    ]
     """
 
     if type(zh_json) not in (dict, ):
