@@ -22,6 +22,7 @@ def parse_zh_json(zh_json):
             "meanList": [
                 {
                     "meaning": remove_html_tags(mean["mean"]),
+                    "meanExtends": parse_mean_extends(mean["meanExtends"]),
                     "poomsa": mean["partsLabel"]
                 }
                 for mean in item["meanList"]
@@ -47,5 +48,22 @@ def remove_html_tags(text):
     :return: string
     """
 
-    soup = BeautifulSoup(text)
+    soup = BeautifulSoup(text, 'lxml')
     return soup.text
+
+def parse_mean_extends(meanExtends):
+    """
+
+    :param meanExtends:
+    e.g.)
+        <related entryID='968843' pinyin='búdàn' type='0'>不但</related><related entryID='968986' pinyin='bùguāng' type='0'>不光</related>
+    :return:
+    String
+    e.g.)
+        "不但, 不光"
+    """
+
+    soup = BeautifulSoup(meanExtends, 'lxml')
+    relateds = soup.find_all("related")
+
+    return ", ".join([r.text for r in relateds])
