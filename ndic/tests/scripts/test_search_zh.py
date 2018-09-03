@@ -23,7 +23,6 @@ class NdicZhCliTest(unittest.TestCase):
     def test_search_with_one_num(self):
         result = self.runner.invoke(cli_search_zh, ["你好", "--number", "1"])
         expected_result = """
-        -------------------------
         你好(nǐhǎo)
         안녕하십니까? 
         """
@@ -35,10 +34,9 @@ class NdicZhCliTest(unittest.TestCase):
     def test_search_with_num_two(self):
         result = self.runner.invoke(cli_search_zh, ["你好", "--number", "2"])
         expected_result = """
-        -------------------------
         你好(nǐhǎo)
         안녕하십니까? 
-        -------------------------
+        
         你好吗(nǐhǎoma)
         [동사] 안녕하십니까? 안녕하세요?
         """
@@ -48,20 +46,19 @@ class NdicZhCliTest(unittest.TestCase):
         )
 
     def test_search_with_num_three(self):
-        input = ""
+        input = "快乐"
         result = self.runner.invoke(cli_search_zh, [input, "-n", "3"])
         expected_result = """
-        -------------------------
         快乐(kuàilè)
         [형용사] 즐겁다. 유쾌하다. 
         [동의어] 高兴(gāoxìng) 
         [동의어] 愉快(yúkuài) 
         [동의어] 开心(kāi//xīn) 
         [반의어] 忧郁(yōuyù) 
-        -------------------------
+        
         快乐的(kuàilède)
         행복한. 
-        -------------------------
+        
         快乐地(kuàilède)
         행복하게. 
         """

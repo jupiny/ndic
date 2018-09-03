@@ -140,7 +140,7 @@ def stringify_zh_result(zh_json):
     ret = ""
 
     for item in zh_json:
-        single_line = "-------------------------\n"
+        single_line = "\n"
 
         single_line += "{entryNameTTS}({pinyin})\n".format(
             entryNameTTS=item["entryNameTTS"],
