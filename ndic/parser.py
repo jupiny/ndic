@@ -2,10 +2,11 @@ from .exceptions import CannotFindResultError
 
 from bs4 import BeautifulSoup
 
-def parse_zh_json(zh_json):
+def parse_zh_json(zh_json, num):
     """
     tidy up zh_json data and return tiny data
     :param zh_json:
+    :param num: number of result
     :return:
     list
     e.g.)
@@ -77,7 +78,7 @@ def parse_zh_json(zh_json):
         }
         ret.append(card)
 
-    return ret
+    return ret[0: num]
 
 
 def remove_html_tags(text):

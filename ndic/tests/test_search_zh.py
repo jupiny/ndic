@@ -27,7 +27,5 @@ class NdicZhPythonTest(unittest.TestCase):
         with self.assertRaises(CannotFindResultError):
             ndic.search_zh(src)
 
-
-
 if __name__ == '__main__':
     unittest.main()

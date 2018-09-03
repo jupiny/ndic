@@ -19,6 +19,7 @@ def search(search_word, xth=1):
 
     Args:
         search_word: the word which user want to search
+        xth: result index
     Returns:
         English word(s) or Korean word(s) corresponding to the search_word
     Raises:
@@ -31,22 +32,47 @@ def search(search_word, xth=1):
     return word_meaning
 
 
-def search_zh(search_word, xth=1):
+def search_zh_cli(search_word, num=1):
     """
-    Search chinese-zh
+    Search chinese-zh and return result converted to string
+    for cli environment
 
+    :param search_word:
+    :param num: number of result
+    :return:
+    """
+
+    if num < 1:
+        raise ValueError("search_zh_cli() got parameter res_len under 1")
+
+    naver_zhdic_url = make_naver_zhdic_url(search_word)
+    response_json = request_naver_zhdic_url(naver_zhdic_url)
+    parsed_items = parse_zh_json(response_json, num)
+    ret_string = stringify_zh_result(parsed_items)
+
+    return ret_string
+
+
+def search_zh(search_word, num=1):
+    """
+    Search chinese-zh and return result converted to string
+    for python interpreter environment
     Example Usage)
 
         >>> import ndic
         >>> ndic.search_zh("你")
 
     :param search_word:
-    :param xth:
+    :param num: number of result
     :return:
     """
+
+    if num < 1:
+        raise ValueError("search_zh() got parameter res_len under 1")
+
+
     naver_zhdic_url = make_naver_zhdic_url(search_word)
     response_json = request_naver_zhdic_url(naver_zhdic_url)
-    items = parse_zh_json(response_json)
+    parsed_items = parse_zh_json(response_json, num)
 
-    return stringify_zh_result(items)
-
+    return parsed_items
