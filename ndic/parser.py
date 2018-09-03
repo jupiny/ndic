@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from .exceptions import CannotFindResultError
 
 from bs4 import BeautifulSoup
