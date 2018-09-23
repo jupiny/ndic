@@ -1,7 +1,7 @@
 Ndic
 ====
 
-|Build Status| |Coverage Status| |Pypi Version| |Downloads Per Month| |License MIT|
+|Build Status| |Coverage Status| |Pypi Version| |Downloads| |License MIT|
 
 Python package for NAVER English-Korean, Korean-English, Chinese-Korean, Korean-Chinese dictionaries
 
@@ -141,7 +141,8 @@ the corresponding Chinese word(s).
             },
             {
                'meaning': '苹果树 (“사과나무”的略语)。',
-               'relatedMeanInfos명사'}
+               'relatedMeanInfos명사'
+            }
          ],
       'pinyin': ''
       }
@@ -212,7 +213,7 @@ by `Click`_.
    :target: https://coveralls.io/github/jupiny/ndic?branch=master
 .. |Pypi Version| image:: https://img.shields.io/pypi/v/ndic.svg
    :target: https://pypi.python.org/pypi/ndic
-.. |Downloads Per Month| image:: https://img.shields.io/pypi/dm/ndic.svg
-   :target: https://pypi.python.org/pypi/ndic
+.. |Downloads| image:: https://pepy.tech/badge/ndic
+   :target: https://pepy.tech/project/ndic
 .. |License MIT| image:: https://img.shields.io/badge/license-MIT-blue.svg
    :target: https://raw.githubusercontent.com/jupiny/ndic/master/LICENSE
