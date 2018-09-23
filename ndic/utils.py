@@ -142,10 +142,10 @@ def stringify_zh_result(zh_json):
     for item in zh_json:
         single_line = "\n"
 
-        single_line += "{entryNameTTS}({pinyin})\n".format(
-            entryNameTTS=item["entryNameTTS"],
-            pinyin=item["pinyin"],
-        )
+        single_line += "{entryNameTTS}\n".format(entryNameTTS=item["entryNameTTS"])
+
+        if item["pinyin"] != "":
+            single_line += "({pinyin})".format(pinyin=item["pinyin"])
 
         for mean in item["meanList"]:
             poomsa = mean["poomsa"]
