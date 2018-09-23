@@ -37,7 +37,7 @@ def search_zh_cli(search_word, num=1):
     Search chinese-zh and return result converted to string
     for cli environment
 
-    :param search_word:
+    :param search_word: chinese or korean word
     :param num: number of result
     :return:
     """
@@ -62,7 +62,9 @@ def search_zh(search_word, num=1):
         >>> import ndic
         >>> ndic.search_zh("你")
 
-    :param search_word:
+        >>> ndic.search_zh("시계", 3)
+
+    :param search_word: chinese or korean word
     :param num: number of result
     :return:
     """
