@@ -64,9 +64,9 @@ def parse_zh_json(zh_json, num):
 
                     "relatedMeanInfos": [
                         {
-                            "destEntryName": related["destEntryName"], # e.g.) 你笃
+                            "destEntryName": remove_html_tags(related["destEntryName"]), # e.g.) 你笃
                             "relatedTypeString": related["relatedTypeString"], # e.g.) 참조어, 반의어, ...
-                            "destEntryPinyin": related["destEntryPinyin"], # e.g.) nǐdǔ
+                            "destEntryPinyin": remove_html_tags(related["destEntryPinyin"]), # e.g.) nǐdǔ
                             "relatedMark": related["relatedMark"] # e.g.) →
                         }
                         for related in mean["relatedMeanInfos"]
@@ -75,7 +75,7 @@ def parse_zh_json(zh_json, num):
                 }
                 for mean in item["meanList"]
             ],
-            "pinyin": item["pinyin"],
+            "pinyin": remove_html_tags(item["pinyin"]),
         }
         ret.append(card)
 
