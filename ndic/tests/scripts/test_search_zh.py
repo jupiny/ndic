@@ -17,8 +17,7 @@ class NdicZhCliTest(unittest.TestCase):
 
     @classmethod
     def remove_white_space(cls, output):
-        # string = str(output.encode('utf-8', 'ignore').decode("utf-8"))
-        return re.sub("[^\w]", "", output)
+        return re.sub(r"[^w]", "", output)
 
     def test_search_with_one_num(self):
         result = self.runner.invoke(cli_search_zh, ["你好", "--number", "1"])
