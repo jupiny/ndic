@@ -13,28 +13,12 @@ def parse_zh_json(zh_json, num):
     e.g.)
     [
         {
-            'entryNameTTS': '你们',
-            'meanList': [
-                {
-                    'meaning': '너희들. 당신들. 자네들.',
-                    'relatedMeanInfos': [
-                        {
-                            'destEntryName': '你笃',
-                            'relatedTypeString': '참조어',
-                            'destEntryPinyin': 'nǐdǔ',
-                            'relatedMatEntryName': '恁',
-                            'relatedTypeString': '참조어',
-                            'destEntryPinyin': 'nín',
-                            'relatedMark': '→'
-                        }
-                    ],
-                    'poomsa': '대명사'
-                }
-            ],
+            'origin': '你们',
+            'meanings': ['너희들. 당신들. 자네들.'],
             'pinyin': 'nǐ‧men'
         },
         {
-            'entryNameTTS': '你们好',
+            'origin': '你们好',
             ...
         }
     ]
@@ -57,24 +41,8 @@ def parse_zh_json(zh_json, num):
     ret = []
     for item in items:
         card = {
-            "entryNameTTS" : item["entryNameTTS"],
-            "meanList": [
-                {
-                    "meaning": remove_html_tags(mean["mean"]),
-
-                    "relatedMeanInfos": [
-                        {
-                            "destEntryName": remove_html_tags(related["destEntryName"]), # e.g.) 你笃
-                            "relatedTypeString": related["relatedTypeString"], # e.g.) 참조어, 반의어, ...
-                            "destEntryPinyin": remove_html_tags(related["destEntryPinyin"]), # e.g.) nǐdǔ
-                            "relatedMark": related["relatedMark"] # e.g.) →
-                        }
-                        for related in mean["relatedMeanInfos"]
-                    ],
-                    "poomsa": mean["partsLabel"]
-                }
-                for mean in item["meanList"]
-            ],
+            "origin" : item["entryNameTTS"],
+            "meanings": [ remove_html_tags(mean["mean"]) for mean in item["meanList"] ],
             "pinyin": remove_html_tags(item["pinyin"]),
         }
         ret.append(card)

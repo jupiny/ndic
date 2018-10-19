@@ -94,41 +94,16 @@ def stringify_zh_result(zh_json):
     e.g.)
     [
         {
-            'entryNameTTS': '你',
-            'meanList': [
-                {'meaning': '너. 자네. 당신.', 'poomsa': '대명사'},
-                {'meaning': '너희들. 당신들.', 'poomsa': '대명사'},
-                {'meaning': '사람. 누구. (어떤 사람을 막연히 일컫거나 때로는 자기를 의미하기도 함)', 'poomsa': '대명사'}
-            ],
-            'pinyin': 'nǐ'},
+            'origin': '你',
+            'meaning': [ '너. 자네. 당신.', '너희들. 당신들.', '사람. 누구. (어떤 사람을 막연히 일컫거나 때로는 자기를 의미하기도 함)' ],
+            'pinyin': 'nǐ'
+        },
         {
-            'entryNameTTS': '你的',
-            'meanList': [
-                {'meaning': '너의.', 'poomsa': ''},
-                {'meaning': '네 것.', 'poomsa': '명사'},
-                {'meaning': '이새끼.', 'poomsa': '명사'}],
+            'origin': '你的',
+            'meaning': ['너의.', '네 것.', '이새끼.'],
             'pinyin': 'nǐ‧de'
         },
-        {
-            'entryNameTTS': '你看你',
-            'meanList': [
-                {'meaning': '네 꼴 좀 봐라!', 'poomsa': ''}
-            ],
-            'pinyin': 'nǐkànnǐ'},
-        {
-            'entryNameTTS': '你瞧你',
-            'meanList': [
-                {'meaning': '네 꼴 좀 봐라.', 'poomsa': ''}
-            ],
-            'pinyin': 'nǐqiáonǐ'
-        },
-        {
-            'entryNameTTS': '迷你',
-            'meanList': [
-                {'meaning': '미니(mini). 소형의.', 'poomsa': '형용사'}
-            ],
-            'pinyin': 'mínǐ'
-        }
+        ...
     ]
     :type zh_json: list
     :return:
@@ -141,30 +116,16 @@ def stringify_zh_result(zh_json):
 
     for item in zh_json:
         single_line = "\n"
-
-        single_line += "{entryNameTTS}".format(entryNameTTS=item["entryNameTTS"])
+        single_line += "{entryNameTTS}".format(entryNameTTS=item["origin"])
 
         if item["pinyin"] != "":
-            single_line += "({pinyin})\n".format(pinyin=item["pinyin"])
+            single_line += "({pinyin})".format(pinyin=item["pinyin"])
 
-        for mean in item["meanList"]:
-            poomsa = mean["poomsa"]
-            meaning = mean["meaning"]
-            relatedMeanInfos = mean["relatedMeanInfos"]
+        single_line += "\n"
 
-            if poomsa != "":
-                single_line += "[{poomsa}] ".format(poomsa=poomsa)
-
-            if meaning != "":
-                single_line += "{meaning} ".format(meaning=meaning)
-
-            if relatedMeanInfos: # if empty
-                for related in relatedMeanInfos:
-                    single_line += "\n[{relatedTypeString}] {destEntryName}({destEntryPinyin}) ".format(
-                        relatedTypeString=related["relatedTypeString"],
-                        destEntryName=related["destEntryName"],
-                        destEntryPinyin=related["destEntryPinyin"],
-                    )
+        for mean in item["meanings"]:
+            if mean != "":
+                single_line += "{meaning} ".format(meaning=mean)
 
             single_line += "\n"
 

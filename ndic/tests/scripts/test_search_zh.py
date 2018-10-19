@@ -37,7 +37,7 @@ class NdicZhCliTest(unittest.TestCase):
         안녕하십니까? 
         
         你好吗(nǐhǎoma)
-        [동사] 안녕하십니까? 안녕하세요?
+        안녕하십니까? 안녕하세요?
         """
         self.assertEqual(
             self.remove_white_space(result.output),
@@ -49,11 +49,7 @@ class NdicZhCliTest(unittest.TestCase):
         result = self.runner.invoke(cli_search_zh, [input, "-n", "3"])
         expected_result = """
         快乐(kuàilè)
-        [형용사] 즐겁다. 유쾌하다. 
-        [동의어] 高兴(gāoxìng) 
-        [동의어] 愉快(yúkuài) 
-        [동의어] 开心(kāi//xīn) 
-        [반의어] 忧郁(yōuyù) 
+        즐겁다. 유쾌하다. 
         
         快乐的(kuàilède)
         행복한. 

@@ -17,23 +17,11 @@ class NdicZhPythonTest(unittest.TestCase):
         test_input = "的"
         test_result = [
             {
-                'entryNameTTS': '的',
-                'meanList': [
-                    {
-                        'meaning': '‘定语’ (한정어)의 뒤에 붙음.',
-                        'relatedMeanInfos': [],
-                        'poomsa': '조사'
-                    },
-                    {
-                        'meaning': '한정어와 중심어의 관계가 일반적인 수식 관계임.',
-                        'relatedMeanInfos': [],
-                        'poomsa': '조사'
-                    },
-                    {
-                        'meaning': '한정어와 중심어의 관계가 종속 관계임.',
-                        'relatedMeanInfos': [],
-                        'poomsa': '조사'
-                    }
+                'origin': '的',
+                'meanings': [
+                    '‘定语’ (한정어)의 뒤에 붙음.',
+                    '한정어와 중심어의 관계가 일반적인 수식 관계임.',
+                    '한정어와 중심어의 관계가 종속 관계임.',
                 ],
                 'pinyin': '‧de'
             }
@@ -45,15 +33,9 @@ class NdicZhPythonTest(unittest.TestCase):
         test_input = "苹果"
         test_result = [
             {
-                'entryNameTTS': '苹果',
-                'meanList': [
-                    {
-                        'meaning': '사과(나무).',
-                        'relatedMeanInfos': [],
-                        'poomsa': '명사'
-                    }
-                ],
-                'pinyin': 'píngguǒ'
+                'origin': '苹果',
+                'meanings': [ '사과(나무).' ],
+                'pinyin': 'píngguǒ',
             }
         ]
 
@@ -73,21 +55,8 @@ class NdicZhPythonTest(unittest.TestCase):
         test_input = "遇见"
         test_output = [
             {
-                'entryNameTTS': '遇见',
-                'meanList': [
-                    {
-                        'meaning': '만나다. 조우(遭遇)하다.',
-                        'relatedMeanInfos': [
-                            {
-                                'destEntryName': '碰见',
-                                'relatedTypeString': '참조어',
-                                'destEntryPinyin': 'pèng//‧jiàn',
-                                'relatedMark': '→'
-                            }
-                        ],
-                        'poomsa': '동사'
-                    }
-                ],
+                'origin': '遇见',
+                'meanings': [ '만나다. 조우(遭遇)하다.' ],
                 'pinyin': 'yù//‧jiàn'
             }
         ]
@@ -98,32 +67,13 @@ class NdicZhPythonTest(unittest.TestCase):
         test_input = "兄弟"
         test_output = [
             {
-                'entryNameTTS': '兄弟',
-                'meanList': [
-                    {
-                        'meaning': '아우. 동생.',
-                        'relatedMeanInfos': [
-                            {
-                                'destEntryName': '弟弟',
-                                'relatedTypeString': '동의어',
-                                'destEntryPinyin': 'dì‧di',
-                                'relatedMark': '〓'
-                            }
-                        ],
-                        'poomsa': '명사'
-                    },
-                    {
-                        'meaning': '동생. 젊은이. 자기보다 나이 어린 남자를 친근하게 부르는 말.',
-                        'relatedMeanInfos': [],
-                        'poomsa': '명사'
-                    },
-                    {
-                        'meaning': '저. (남자가) 자기 동년배에게나 뭇사람들 앞에서 자신을 낮추어 하는 말.',
-                        'relatedMeanInfos': [],
-                        'poomsa': '대명사'
-                    }
+                'origin': '兄弟',
+                'meanings': [
+                    '아우. 동생.',
+                    '동생. 젊은이. 자기보다 나이 어린 남자를 친근하게 부르는 말.',
+                    '저. (남자가) 자기 동년배에게나 뭇사람들 앞에서 자신을 낮추어 하는 말.',
                 ],
-                'pinyin': 'xiōng‧di'
+                'pinyin': 'xiōng‧di',
             }
         ]
 
