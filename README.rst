@@ -112,16 +112,10 @@ corresponding Korean word(s).
     >>> ndic.search_zh('苹果')
     [
       {
-         'entryNameTTS': '苹果',
-         'meanList': [
-            {
-               'meaning': '사과(나무).',
-               'relatedMeanInfos': [],
-               'poomsa': '명사'
-            }
-         ],
+         'origin': '苹果',
+         'meanings': ['사과(나무).'],
          'pinyin': 'píngguǒ'
-       }
+      }
     ]
 
 Conversely, entering a Korean word as the ``search`` function argument will return
@@ -132,20 +126,10 @@ the corresponding Chinese word(s).
     >>> ndic.search('사과')
     [
       {
-         'entryNameTTS': '사과',
-         'meanList': [
-            {
-               'meaning': '苹果 。',
-               'relatedMeanInfos': [],
-               'poomsa': '명사'
-            },
-            {
-               'meaning': '苹果树 (“사과나무”的略语)。',
-               'relatedMeanInfos명사'
-            }
-         ],
-      'pinyin': ''
-      }
+         'origin': '사과',
+         'meanings': ['苹果 。', '苹果树 (“사과나무”的略语)。'],
+         'pinyin': ''
+       }
     ]
 
 If the word you search has multiple meanings, you can choose the meaning of the desired order.
@@ -154,11 +138,15 @@ Unless you set any ``num`` value, you will get the first meaning of the word.
 
 .. code-block:: python
 
-    >>> ndic.search('사과', 1) # returns top 1 result
-    [{'entryNameTTS': '사과', 'meanList': [{'meaning': '苹果 。', 'relatedMeanInfos': [], 'poomsa': '명사'}, {'meaning': '苹果树 (“사과나무”的略语)。', 'relatedMeanInfos명사'}], 'pinyin': ''}]
-    >>> ndic.search('사과', 4) # returns top 4 results
-    [{'entryNameTTS': '사과', 'meanList': [{'meaning': '苹果 。', 'relatedMeanInfos': [], 'poomsa': '명사'}, {'meaning': '苹果树 (“사과나무”的略语)。', 'relatedMeanInfos명사'}], 'pinyin': ''}, {'entryNameTTS': '사과', 'meanList': [{'meaning': '苹果。', 'relatedMeanInfos': [], 'poomsa': '명사'}], 'pinyin': ''}, {'entryNameTTS': '사과t': [{'meaning': '道歉。', 'relatedMeanInfos': [], 'poomsa': '명사'}], 'pinyin': ''}, {'entryNameTTS': '사과', 'meanList': [{'meaning': '道歉，赔罪，赔不是，赔礼，表nInfos': [], 'poomsa': '명사'}], 'pinyin': ''}]
-
+    >>> ndic.search('抱歉', 1) # returns top 1 result
+    [{'origin': '抱歉', 'meanings': ['미안하게 생각하다. 미안해하다.'], 'pinyin': 'bào//qiàn'}]
+    >>> ndic.search('抱歉', 4) # returns top 4 results
+    [
+      {'origin': '抱歉', 'meanings': ['미안하게 생각하다. 미안해하다.'], 'pinyin': 'bào//qiàn'},
+      {'origin': '真抱歉', 'meanings': ['정말 미안해!'], 'pinyin': 'zhēnbàoqiàn'},
+      {'origin': '抱歉的', 'meanings': ['regrettable'], 'pinyin': ''},
+      {'origin': '感到抱歉', 'meanings': ['regretfully'], 'pinyin': ''}
+    ]
 
 
 English Command Line Interface
@@ -191,16 +179,16 @@ by `Click`_.
 
     $ ndic-zh 사랑
     사랑
-    [명사] (异性之间的)爱 ，爱慕 ，爱意 ，爱河 ，爱情 ，感情 ，情 ，恋 ，恋爱 ，相思 ，...
-    [명사] (父母、师长、神或上级的)爱 ，爱护 ，呵护 ，宠爱 ，关爱 ，慈 ，爱戴 。
-    [명사] (对别人的)爱 ，爱心 ，爱护 ，关爱 ，友爱 。
+    (异性之间的)爱 ，爱慕 ，爱意 ，爱河 ，爱情 ，感情 ，情 ，恋 ，恋爱 ，相思 ，...
+    (父母、师长、神或上级的)爱 ，爱护 ，呵护 ，宠爱 ，关爱 ，慈 ，爱戴 。
+    (对别人的)爱 ，爱心 ，爱护 ，关爱 ，友爱 。
 
     $ ndic-zh 노트북 --number 2 # or -n 2
     노트북
-    [명사] 笔记本电脑。
+    笔记本电脑。
 
     노트북
-    [명사] 笔记本电脑，笔记本，手提电脑，便携式电脑，笔记型电脑，膝上电脑，膝上型计算机。
+    笔记本电脑，笔记本，手提电脑，便携式电脑，笔记型电脑，膝上电脑，膝上型计算机。
 
 .. _Requests: http://docs.python-requests.org/en/master/
 .. _BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
