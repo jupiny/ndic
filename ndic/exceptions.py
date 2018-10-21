@@ -23,6 +23,7 @@ class NdicConnectionError(Exception):
     def __repr__(self):
         return CONNECTION_ERROR_MESSAGE
 
+
 class CannotFindResultError(Exception):
     """
     Exception raised when there's no matching results
@@ -36,4 +37,3 @@ class CannotFindResultError(Exception):
 
     def __repr__(self):
         return CANNOT_FIND_RESULT_MESSAGE
-

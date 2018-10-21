@@ -69,7 +69,3 @@ class NdicZhCliTest(unittest.TestCase):
         because naver always returns the most similar word's result
         """
         pass
-
-
-if __name__ == '__main__':
-    unittest.main()
