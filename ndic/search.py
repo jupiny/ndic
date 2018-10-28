@@ -72,7 +72,6 @@ def search_zh(search_word, num=1):
     if num < 1:
         raise ValueError("search_zh() got parameter res_len under 1")
 
-
     naver_zhdic_url = make_naver_zhdic_url(search_word)
     response_json = request_naver_zhdic_url(naver_zhdic_url)
     parsed_items = parse_zh_json(response_json, num)

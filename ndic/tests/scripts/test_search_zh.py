@@ -23,7 +23,7 @@ class NdicZhCliTest(unittest.TestCase):
         result = self.runner.invoke(cli_search_zh, ["你好", "--number", "1"])
         expected_result = """
         你好(nǐhǎo)
-        안녕하십니까? 
+        안녕하십니까?
         """
         self.assertEqual(
             self.remove_white_space(result.output),
@@ -34,8 +34,8 @@ class NdicZhCliTest(unittest.TestCase):
         result = self.runner.invoke(cli_search_zh, ["你好", "--number", "2"])
         expected_result = """
         你好(nǐhǎo)
-        안녕하십니까? 
-        
+        안녕하십니까?
+
         你好吗(nǐhǎoma)
         안녕하십니까? 안녕하세요?
         """
@@ -49,13 +49,13 @@ class NdicZhCliTest(unittest.TestCase):
         result = self.runner.invoke(cli_search_zh, [input, "-n", "3"])
         expected_result = """
         快乐(kuàilè)
-        즐겁다. 유쾌하다. 
-        
+        즐겁다. 유쾌하다.
+
         快乐的(kuàilède)
-        행복한. 
-        
+        행복한.
+
         快乐地(kuàilède)
-        행복하게. 
+        행복하게.
         """
         self.assertEqual(
             self.remove_white_space(result.output),

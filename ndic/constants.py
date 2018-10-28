@@ -16,5 +16,5 @@ NAVER_ZHDIC_URL = "https://zh.dict.naver.com/cndictApi/search/all?"\
 CONNECTION_ERROR_MESSAGE = "Network connection is lost. "\
     + "Please check the connection to the Internet."
 
-CANNOT_FIND_RESULT_MESSAGE = "Sorry We Didn't Find Any Results Matching This Search"\
+CANNOT_FIND_RESULT_MESSAGE = "Cannot Find Any Results Matching This Search"\
     + "Please recheck your input is valid"

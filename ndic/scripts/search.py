@@ -24,6 +24,7 @@ def cli_search(search_word, xth):
     word_meaning = search(search_word, xth)
     click.echo(word_meaning)
 
+
 @click.command()
 @click.argument('search_word')
 @click.option('--number', '-n', default=1, help='number of result, default=1')

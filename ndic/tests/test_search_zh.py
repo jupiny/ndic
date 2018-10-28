@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import unittest
+from click.testing import CliRunner
 
 import ndic
 from ndic.exceptions import CannotFindResultError
@@ -57,9 +58,6 @@ class NdicZhPythonTest(unittest.TestCase):
         input = "qpqppqppqpqsdpfjas"
         with self.assertRaises(CannotFindResultError):
             ndic.search_zh(input)
-
-
-from click.testing import CliRunner
 
 
 class NdicZhCliTest(unittest.TestCase):

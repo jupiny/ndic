@@ -43,7 +43,9 @@ def parse_zh_json(zh_json, num):
     for item in items:
         card = {
             "origin": item["entryNameTTS"],
-            "meanings": [remove_html_tags(mean["mean"]) for mean in item["meanList"]],
+            "meanings": [
+                remove_html_tags(mean["mean"]) for mean in item["meanList"]
+            ],
             "pinyin": remove_html_tags(item["pinyin"]),
         }
         ret.append(card)
