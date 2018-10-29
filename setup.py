@@ -28,6 +28,7 @@ setup(
     entry_points='''
         [console_scripts]
         ndic=ndic.scripts.search:cli_search
+        ndic-zh=ndic.scripts.search:cli_search_zh
     ''',
     classifiers=[
         'Development Status :: 5 - Production/Stable',

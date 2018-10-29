@@ -203,7 +203,7 @@ class NdicScriptTestCase(TestCase):
         )
         self.assertEqual(
             result.exit_code,
-            -1,
+            1,
         )
         self.assertEqual(
             result.exception.__class__,
