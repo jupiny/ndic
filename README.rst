@@ -96,7 +96,7 @@ If your network connection is lost, you will get below error message.
 Chinese Usage
 -----
 
-The usage is very similar with English Usage.
+The usage is very similar with Chinese Usage.
 
 Begin by importing the Ndic module:
 
@@ -104,7 +104,7 @@ Begin by importing the Ndic module:
 
     >>> import ndic
 
-Entering an English word as the ``search`` function argument will return the
+Entering an English word as the ``search_zh`` function argument will return the
 corresponding Korean word(s).
 
 .. code-block:: python
@@ -118,12 +118,12 @@ corresponding Korean word(s).
       }
     ]
 
-Conversely, entering a Korean word as the ``search`` function argument will return
+Conversely, entering a Korean word as the ``search_zh`` function argument will return
 the corresponding Chinese word(s).
 
 .. code-block:: python
 
-    >>> ndic.search('사과')
+    >>> ndic.search_zh('사과')
     [
       {
          'origin': '사과',
@@ -138,9 +138,9 @@ Unless you set any ``num`` value, you will get the first meaning of the word.
 
 .. code-block:: python
 
-    >>> ndic.search('抱歉', 1) # returns top 1 result
+    >>> ndic.search_zh('抱歉', 1) # returns top 1 result
     [{'origin': '抱歉', 'meanings': ['미안하게 생각하다. 미안해하다.'], 'pinyin': 'bào//qiàn'}]
-    >>> ndic.search('抱歉', 4) # returns top 4 results
+    >>> ndic.search_zh('抱歉', 4) # returns top 4 results
     [
       {'origin': '抱歉', 'meanings': ['미안하게 생각하다. 미안해하다.'], 'pinyin': 'bào//qiàn'},
       {'origin': '真抱歉', 'meanings': ['정말 미안해!'], 'pinyin': 'zhēnbàoqiàn'},
