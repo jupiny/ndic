@@ -3,13 +3,12 @@ Ndic
 
 |Build Status| |Coverage Status| |Pypi Version| |Downloads| |License MIT|
 
-Python package for NAVER English-Korean, Korean-English, Chinese-Korean, Korean-Chinese dictionaries
+Python package for NAVER English ⇔ Korean, Chinese ⇔ Korean dictionaries
 
 Introduction
 ------------
 
-Search of English-Korean, Korean-English, Chinese-Korean, Korean-Chinese dictionaries is
-provided.
+Search of English ⇔ Korean, Chinese ⇔ Korean dictionaries is provided.
 
 Requirements
 ------------
